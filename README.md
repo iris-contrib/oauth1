@@ -1,14 +1,22 @@
 # OAuth1
 
 Modified to export some usefull methods in order to not re-create an http.Client instance
-for each authorized user. Forked from [dghubble/oauth1)](https://github.com/dghubble/oauth1).
+for each authorized user. Forked from [dghubble/oauth1](https://github.com/dghubble/oauth1).
+
+## Install
+
+```sh
+$ go get github.com/iris-contrib/oauth1@latest
+```
+
+## Usage
 
 ```go
 import "github.com/kataras/iris/v12/x/client"
 ```
 
 ```go
-var myClient = client.New(client.BaseURL("https://apis.garmin.com"))
+var myClient = client.New(client.BaseURL("https://xxx.xxx.com"))
 ```
 
 ```go
@@ -19,9 +27,9 @@ var config = &oauth1.Config{
 	ConsumerSecret: "xxx",
 	CallbackURL:    "http://localhost:8080/callback",
 	Endpoint: oauth1.Endpoint{
-		RequestTokenURL: "https://connectapi.garmin.com/oauth-service/oauth/request_token",
-		AuthorizeURL:    "https://connect.garmin.com/oauthConfirm",
-		AccessTokenURL:  "https://connectapi.garmin.com/oauth-service/oauth/access_token",
+		RequestTokenURL: "https://xxx.xxx.com/oauth-service/oauth/request_token",
+		AuthorizeURL:    "https://xxx.xxx.com/oauthConfirm",
+		AccessTokenURL:  "https://xxx.xxx.com/oauth-service/oauth/access_token",
 	},
 }
 ```
